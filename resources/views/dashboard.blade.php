@@ -53,6 +53,8 @@
 @endsection
 
 @section('body-right')
+    @yield('chat')
+
     <div class="p-3 mt-md-4 @hasSection('navbar') @else d-none d-md-block @endif">
         <div class="v-md-center">
             <div class="d-none d-md-block col-xs-12 col-md no-padder">
