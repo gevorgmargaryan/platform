@@ -1,12 +1,9 @@
 <div class="p-3 v-center">
     <div class="dropdown col no-padder">
         <a href="#" class="d-flex p-0 v-center" data-toggle="dropdown">
-            <span class="thumb-sm avatar mr-3">
-                <img src="{{Auth::user()->presenter()->image()}}" class="b b-dark bg-light">
-            </span>
-            <div class="chat-user">
+            <div class="chat-user is_online ">
                 <div class="chat-user-inner">
-                    <div class="user-accr ua-color-8">{{Auth::user()->presenter()->initials()}}</div>
+                    <div class="user-accr ua-color-{{ strtolower(substr(Auth::user()->presenter()->title(), 0,1)) }}">{{Auth::user()->presenter()->initials()}}</div>
                     <div class="user-name">
                         <span class="text-ellipsis">{{Auth::user()->presenter()->title()}}</span>
                     </div>
