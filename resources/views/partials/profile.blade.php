@@ -1,7 +1,7 @@
 <div class="p-3 v-center">
     <div class="dropdown col no-padder">
         <a href="#" class="d-flex p-0 v-center" data-toggle="dropdown">
-            <div class="chat-user is_online ">
+            <div class="chat-user is-online ">
                 <div class="chat-user-inner">
                     <div class="user-accr ua-color-{{ ord(strtolower(substr(Auth::user()->presenter()->title(), 0,1))) }}">{{Auth::user()->presenter()->initials()}}</div>
                     <div class="user-name">
