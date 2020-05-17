@@ -39,11 +39,13 @@
 <div class="app row m-n" id="app" data-controller="@yield('controller')" @yield('controller-data')>
     <div class="container-lg">
         <div class="row">
-            <div class="aside col-xs-12 col-md-2 offset-xxl-0 col-xl-2 col-xxl-3 no-padder bg-dark">
+
+            <div class="aside col-12 bg-dark">
                 <div class="d-md-flex align-items-start flex-column d-sm-block h-full">
                     @yield('body-left')
                 </div>
             </div>
+
             <div class="col-md col-xl col-xxl-9 bg-white shadow no-padder min-vh-100 overflow-hidden">
                 @yield('body-right')
             </div>
