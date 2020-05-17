@@ -68,4 +68,10 @@ class UserPresenter extends Presenter implements Searchable, Personable
     {
         return $this->entity->search($query);
     }
+
+    public function initials()
+    {
+        $ns = explode(' ', $this->entity->name);
+        return substr($ns[0], 0,1) . substr($ns[1] ?? '', 0,1);
+    }
 }

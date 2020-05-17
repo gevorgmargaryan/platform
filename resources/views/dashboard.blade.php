@@ -6,6 +6,48 @@
 
         <ul class="nav m-b">
             {!! Dashboard::menu()->render('Main') !!}
+
+            <li class="nav-item">
+                @if(\Orchid\Access\UserSwitch::isSwitch())
+                    <a href="#"
+                       class="nav-link"
+                       data-controller="layouts--form"
+                       data-action="layouts--form#submitByForm"
+                       data-layouts--form-id="return-original-user"
+                    >
+                        <i class="icon-logout mr-2" aria-hidden="true"></i>
+                        <span>{{ __('Back to my account') }}</span>
+                    </a>
+                    <form id="return-original-user"
+                          class="hidden"
+                          data-controller="layouts--form"
+                          data-action="layouts--form#submit"
+                          action="{{ route('platform.switch.logout') }}"
+                          method="POST">
+                        @csrf
+                    </form>
+                @else
+                    <a href="{{ route('platform.logout') }}"
+                       class="nav-link"
+                       data-controller="layouts--form"
+                       data-action="layouts--form#submitByForm"
+                       data-layouts--form-id="logout-form"
+                       dusk="logout-button">
+                        <i class="icon-logout mr-2" aria-hidden="true"></i>
+                        <span>{{ __('Sign out') }}</span>
+                    </a>
+                    <form id="logout-form"
+                          class="hidden"
+                          action="{{ route('platform.logout') }}"
+                          method="POST"
+                          data-controller="layouts--form"
+                          data-action="layouts--form#submit"
+                    >
+                        @csrf
+                    </form>
+                @endif
+
+            </li>
         </ul>
     </nav>
 @endsection
