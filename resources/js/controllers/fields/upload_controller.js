@@ -224,21 +224,29 @@ export default class extends Controller {
                         this.removeFile(e);
                     }
 
-                    const removeButton = Dropzone.createElement('<a href="javascript:;" class="btn-remove">&times;</a>');
+                    const isReadonly = $('.dropzone-wrapper .visual-dropzone.sortable-dropzone.dropzone-previews').attr('readonly');
+
+                    if (! isReadonly) {
+                        const removeButton = Dropzone.createElement('<a href="javascript:;" class="btn-remove">&times;</a>');
+                    }
                     const editButton = Dropzone.createElement('<a href="javascript:;" class="btn-edit"><i class="icon-note" aria-hidden="true"></i></a>');
 
-                    removeButton.addEventListener('click', (event) => {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        this.removeFile(e);
-                    });
+                    if (! isReadonly) {
+                        removeButton.addEventListener('click', (event) => {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            this.removeFile(e);
+                        });
+                    }
 
                     editButton.addEventListener('click', () => {
                         loadInfo(e.data);
                         $(`${dropname} .attachment.modal`).modal('show');
                     });
 
-                    e.previewElement.appendChild(removeButton);
+                    if (! isReadonly) {
+                        e.previewElement.appendChild(removeButton);
+                    }
                     e.previewElement.appendChild(editButton);
 
                     if (e.data !== undefined) {
