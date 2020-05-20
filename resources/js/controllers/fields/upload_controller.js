@@ -225,10 +225,8 @@ export default class extends Controller {
                     }
 
                     const isReadonly = $('.dropzone-wrapper .visual-dropzone.sortable-dropzone.dropzone-previews').attr('readonly');
+                    const removeButton = Dropzone.createElement('<a href="javascript:;" class="btn-remove">&times;</a>');
 
-                    if (! isReadonly) {
-                        const removeButton = Dropzone.createElement('<a href="javascript:;" class="btn-remove">&times;</a>');
-                    }
                     const editButton = Dropzone.createElement('<a href="javascript:;" class="btn-edit"><i class="icon-note" aria-hidden="true"></i></a>');
 
                     if (! isReadonly) {

@@ -26918,7 +26918,7 @@ var _default = /*#__PURE__*/function (_Controller) {
             var editButton = dropzone__WEBPACK_IMPORTED_MODULE_1___default.a.createElement('<a href="javascript:;" class="btn-edit"><i class="icon-note" aria-hidden="true"></i></a>');
 
             if (!isReadonly) {
-              removeButton.addEventListener('click', function (event) {
+                _removeButton.addEventListener('click', function (event) {
                 event.preventDefault();
                 event.stopPropagation();
 
@@ -26932,7 +26932,7 @@ var _default = /*#__PURE__*/function (_Controller) {
             });
 
             if (!isReadonly) {
-              e.previewElement.appendChild(removeButton);
+              e.previewElement.appendChild(_removeButton);
             }
 
             e.previewElement.appendChild(editButton);
