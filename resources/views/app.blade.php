@@ -36,23 +36,16 @@
 <body>
 
 
-<div class="app row m-n" id="app" data-controller="@yield('controller')" @yield('controller-data')>
-    <div class="container-lg">
-        <div class="row">
+<div class="app" id="app" data-controller="@yield('controller')" @yield('controller-data')>
+    <div class="container">
+        <div class="nav-header">
+            @yield('body-left')
+        </div>
 
-            <div class="aside col-12 nav-header">
-                <div class="d-md-flex align-items-start flex-column d-sm-block h-full">
-                    @yield('body-left')
-                </div>
-            </div>
-
-            <div class="main-content col-md col-xl col-xxl-9 bg-white shadow no-padder min-vh-100 overflow-hidden">
-                @yield('body-right')
-            </div>
+        <div class="main-content bg-white shadow min-vh-100 overflow-hidden">
+            @yield('body-right')
         </div>
     </div>
-
-
 @include('platform::partials.toast')
 </div>
 
