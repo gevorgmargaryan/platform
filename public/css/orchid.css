@@ -18141,20 +18141,6 @@ body {
     position: relative;
 }
 
-.app:before {
-    content: "";
-    position: absolute;
-    width: inherit;
-    top: 0;
-    bottom: 0;
-    z-index: -1;
-    background: #212529;
-    background: -webkit-gradient(left top, right top, color-stop(0%, #212529), color-stop(50%, #212529), color-stop(51%, #f6f8fa), color-stop(71%, #f6f8fa), color-stop(100%, #f6f8fa));
-    background: linear-gradient(to right, #212529 0%, #212529 50%, #f6f8fa 51%, #f6f8fa 71%, #f6f8fa 100%);
-    border: inherit;
-    display: block;
-}
-
 .app .app-header .navbar-header {
     display: inherit;
 }

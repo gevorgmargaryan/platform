@@ -9,7 +9,7 @@
                 class="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
-                data-target="main-collapse-nav"
+                data-target="#main-collapse-nav"
                 aria-controls="main-collapse-nav"
                 aria-expanded="false"
                 aria-label="Menu"

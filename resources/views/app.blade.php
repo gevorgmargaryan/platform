@@ -37,7 +37,7 @@
 
 
 <div class="app" id="app" data-controller="@yield('controller')" @yield('controller-data')>
-    <div class="container">
+    <div class="container-fluid px-0">
         <div class="nav-header">
             @yield('body-left')
         </div>
